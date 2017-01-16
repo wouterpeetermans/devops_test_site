@@ -60,8 +60,14 @@ app.controller('homeController',function($scope, $location, $routeParams, $inter
   }
 
   $scope.sendPost = function () {
-    $scope.post = {"username":$scope.id , "message":$scope.bericht};
-    $http.post(serverAddress+"/api/sendPost",$scope.post).success(function (res) {
+    var post = {"username":$scope.id , "message":$scope.bericht ,"votes": 0};
+    $http.post(serverAddress+"/api/sendPost",post).success(function (res) {
+      getData();
+    })
+  }
+
+  $scope.sendUpvote = function (post) {
+    $http.post(serverAddress+'/api/upvotePost', post).success(function (res) {
       getData();
     })
   }

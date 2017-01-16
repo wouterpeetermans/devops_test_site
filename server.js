@@ -48,9 +48,24 @@ app.post('/api/deletePost', function (req,res) {
   var post = {"username":req.body.username, "message":req.body.message};
   postTable.deleteOne(post,function (err ,result) {
     if (err) throw err;
-    res.status(201);
-  })
-})
+    res.status(201).json(null);
+  });
+});
+
+app.post('/api/upvotePost', function (req , res) {
+  console.log(req.body);
+  var post = {"username":req.body.username, "message":req.body.message};
+  console.log(post);
+  var newVotes = req.body.votes + 1;
+  postTable.updateOne(post,{
+    $set: { "votes":newVotes },
+    $currentDate: { "lastModified": true}
+  },function (err , result) {
+    if (err) throw err;
+    console.log(result);
+    res.status(200).json(null);
+  });
+});
 
 app.post('/api/checkUser', function(req,res){
   userTable.find({"username":req.body.username}).toArray(function(err ,result){
