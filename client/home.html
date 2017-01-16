@@ -4,5 +4,5 @@
 <input type="button" name="post" value="post" ng-click="sendPost()">
 
 <ul>
-  <li ng-repeat="post in posts">Username: {{post.username}}  Message: {{post.message}}</li>
+  <li ng-repeat="post in posts">Username: {{post.username}}  Message: {{post.message}} <input type="button" name="delete" value="delete" ng-click="deletePost(post)"></li>
 </ul>

@@ -66,6 +66,12 @@ app.controller('homeController',function($scope, $location, $routeParams, $inter
     })
   }
 
+  $scope.deletePost = function (post) {
+    $http.post(serverAddress+'/api/deletePost', post).success(function(res) {
+      getData();
+    });
+  }
+
 });
 
 app.config(function($routeProvider){

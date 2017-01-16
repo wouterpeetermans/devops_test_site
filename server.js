@@ -44,6 +44,14 @@ app.post('/api/sendPost', function(req,res){
   });
 });
 
+app.post('/api/deletePost', function (req,res) {
+  var post = {"username":req.body.username, "message":req.body.message};
+  postTable.deleteOne(post,function (err ,result) {
+    if (err) throw err;
+    res.status(201);
+  })
+})
+
 app.post('/api/checkUser', function(req,res){
   userTable.find({"username":req.body.username}).toArray(function(err ,result){
     if (err) throw err;
