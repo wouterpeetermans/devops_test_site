@@ -1,0 +1,24 @@
+{
+  "name": "voorbereidig",
+  "version": "1.0.0",
+  "description": "een samenvatting van zogoed als alle code ",
+  "main": "server.js",
+  "scripts": {
+    "test": "test",
+    "start": "node server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "none"
+  },
+  "keywords": [
+    "gek"
+  ],
+  "author": "Wouter Peetermans",
+  "license": "MIT",
+  "dependencies": {
+    "body-parser": "^1.15.2",
+    "express": "^4.14.0",
+    "mongodb": "^2.2.21"
+  }
+}

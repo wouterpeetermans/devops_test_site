@@ -1,0 +1,8 @@
+<h2>{{ id }}</h2>
+
+<input type="text" name="post" placeholder="typ je berich hier" ng-model="bericht">
+<input type="button" name="post" value="post" ng-click="sendPost()">
+
+<ul>
+  <li ng-repeat="post in posts">Username: {{post.username}}  Message: {{post.message}}</li>
+</ul>
