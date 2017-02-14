@@ -2,6 +2,8 @@ var express = require('express');
 var bodyparser = require('body-parser');
 var MongoClient = require('mongodb').MongoClient;
 
+console.log('got here');
+
 var app = express();
 var db;
 var postTable;
