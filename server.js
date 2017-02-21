@@ -13,6 +13,7 @@ MongoClient.connect('mongodb://localhost:27017/examenPrep', function(err, _db) {
 	if(err){
 		console.log("conection to database failed");
 		throw err;
+	}
 	db = _db;
 	postTable = db.collection('posts');
   userTable = db.collection('users');
