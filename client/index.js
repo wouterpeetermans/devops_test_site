@@ -1,4 +1,4 @@
-var serverAddress = "http://localhost"
+var serverAddress = "http://localhost:8082"
 
 var app = angular.module('examenPrepApp',['ngRoute']);
 
